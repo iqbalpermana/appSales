@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
   before_save :set_total
+  before_update :set_total
   belongs_to :product
   belongs_to :sale
 

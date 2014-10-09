@@ -64,4 +64,7 @@ class SalesController < ApplicationController
   def sale_params
     params.require(:sale).permit(:name, items_attributes: [:id,:product_id, :price,:quantity,:total,:_destroy])
   end
+  def sale_params_update
+    params.require(:sale).permit(:name, items_attributes: [:id,:product_id, :price,:quantity,:total,:_destroy])
+  end
 end

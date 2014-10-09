@@ -9,7 +9,14 @@
   <% @activities.each do |activity| %>
     <tr>
       <td valign="top">
-      <%= activity.inspect %>
+        <%= activity.owner.email %>
+        <% if activity.trackable %>
+          added/updated product
+          <%= link_to activity.trackable.name, product_path(activity.trackable.id) %>
+        <% else %>
+          which has since been removed
+        <% end %>
+
       </td>
     </tr>
   <% end %>
